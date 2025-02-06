@@ -1,25 +1,13 @@
 # README delta-shift
 # Introduction
-Kein finanzieller Rat (LLM unterschlagen die Ratschläge über Stocks)
-Strategie:
-* basierend auf historischen Daten > annual
-	* Kalender multiline chart
-		* identify biggest gradient
-* Watchlisten hinzugefügt
-* Ansichten
-
-Welche Platform mit API
-* 
-
-Eingabe:
-* Stockname
-* Zeitliche Begrenzung
-* 
-## Install
-<code>
-$ poetry install  
-$ poetry run pre-commit install
-</code>
+| **Input** | **Tasks** | **Output**                                    | **API, requests per {min, day}** |
+|-----------|-----------|-----------------------------------------------|----------------------------------|
+| Market    |           | y=$(t)                                        | alphavantage 5/m, 100/d req      |
+| St        |           | multiline chart with multi-year $(t)          | tradedata 8/m, 800/d             |
+| tFilter   |           | moving average $(t)                           |                                  |
+|           |           | Event Calendar                                |                                  |
+|           |           | average_$(t) extrapolation at defined buckets |                                  |
+|           |           | Jupyter NB for analysis                       |                                  |
 
 ## Execution Scripts
 <code>
