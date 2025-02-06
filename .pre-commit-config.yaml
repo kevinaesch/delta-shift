@@ -1,0 +1,37 @@
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        name: black
+        language_version: python3.13
+        exclude: ^(.*/)?\.venv/.*\.py$
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: isort
+        language: system
+        types: [ python ]
+        exclude: ^(.*/)?\.venv/.*\.py$
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+      - id: flake8
+        name: flake8
+        language: system
+        types: [ python ]
+        args: [--config=.flake8]
+        exclude: ^(.*/)?\.venv/.*\.py$
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v3.3.3
+    hooks:
+      - id: pylint
+        name: pylint
+        language: system
+        types: [ python ]
+        args: [--rcfile=.pylintrc, -v]
+        #files: ^main\.py$

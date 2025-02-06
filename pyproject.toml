@@ -1,0 +1,85 @@
+[tool.poetry]
+name = "delta-shift"
+version = "0.1.0"
+description = ""
+authors = ["Kevin Aeschlimann <f6f6bvwwu@mozmail.com>"]
+license = "Postcard"
+readme = "README.md"
+packages = [{include = "machineplanner", from = "src"}]
+
+
+[virtualenvs]
+in-project = true
+create = true
+always-copy = true
+no-pip = false
+no-setuptools = false
+system-site-packages = false
+path = ".venv"
+prefer-active-python = false
+prompt = "{project_name}-py{python_version}"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+notebook = "^7.3.1"
+pre-commit = "^4.0.1"
+flake8 = "^7.1.1"
+black = "^24.10.0"
+pylint = "^3.3.3"
+isort = "^5.13.2"
+
+[tool.black]
+line-length = 120
+target-version = ['py313']
+skip-string-normalization = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.nox
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+skip = [
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".tox",
+    ".venv",
+    "_build",
+    "buck-out",
+    "build",
+    "dist"
+]
+
+
+[tool.pytest.ini_options]
+filterwarnings = "ignore::DeprecationWarning"
+addopts = "-rfp -v -s"
+pythonpath = "src"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jupyter = "^1.1.1"
+pre-commit = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
