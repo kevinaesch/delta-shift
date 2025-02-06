@@ -81,6 +81,8 @@ pre-commit = "^4.1.0"
 flake8 = "^7.1.1"
 pylint = "^3.3.4"
 isort = "^5"
+yfinance = "^0.2.52"
+numpy = "^2.2.2"
 
 
 [build-system]
