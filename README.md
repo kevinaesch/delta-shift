@@ -21,6 +21,10 @@ $ poetry install
 $ poetry run pre-commit install
 </code>
 
+## Execution Scripts
+<code>
+$ poetry run ds
+</code>
 
 ## Trading Data API: 
 free tier limitations: requests per minute, requests per day  
