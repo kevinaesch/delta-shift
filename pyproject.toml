@@ -83,6 +83,7 @@ pylint = "^3.3.4"
 isort = "^5"
 yfinance = "^0.2.52"
 numpy = "^2.2.2"
+matplotlib = "^3.10.0"
 
 
 [build-system]
