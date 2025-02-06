@@ -5,7 +5,7 @@ description = ""
 authors = ["Kevin Aeschlimann <f6f6bvwwu@mozmail.com>"]
 license = "Postcard"
 readme = "README.md"
-packages = [{include = "machineplanner", from = "src"}]
+packages = [{include = "delta-shift", from = "src"}]
 
 
 [virtualenvs]
